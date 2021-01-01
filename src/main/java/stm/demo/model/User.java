@@ -22,6 +22,7 @@ public class User {
     private int userId;
 
     private String name;
+
     @Column(name = "lastName")
     private String lastName;
 
@@ -34,11 +35,16 @@ public class User {
     @Column(name = "registration_time")
     private LocalDateTime registrationDateTime = LocalDateTime.now() ;
 
+    public User(int userId) {
+        this.userId = userId;
+    }
 
-
-
-
-
-
-
+    public User(String name, String lastName, String email, String password, boolean status, LocalDateTime registrationDateTime) {
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.status = status;
+        this.registrationDateTime = registrationDateTime;
+    }
 }

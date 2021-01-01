@@ -36,13 +36,29 @@ public class Task {
     // EnumType.STRING  - przechowuje nazwy obiektów enum
     private Status status;
 
+
     @ManyToOne(
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL
+
     )
     private User user;
 
 
+    public Task(String title, String descrpition, LocalDateTime dateAdded, Type type, Status status, User user) {
+        this.title = title;
+        this.descrpition = descrpition;
+        this.dateAdded = dateAdded;
+        this.type = type;
+        this.status = status;
+        this.user = user;
+    }
 
-
+    public Task(String title, String descrpition, Type type, Status status, User user) {
+        this.title = title;
+        this.descrpition = descrpition;
+        this.type = type;
+        this.status = status;
+        this.user = user;
+    }
 }
